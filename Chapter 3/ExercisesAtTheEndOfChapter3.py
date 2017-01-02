@@ -7,7 +7,6 @@ def exercise381():
     for i in range(1000):
         print("We like Python's turtles!")
 
-
 def exercise382():
     pass
     # I'm not sure what this cellphone is that they're talking about.
@@ -25,7 +24,9 @@ def exercise384():
     tess.left(3645)
     # https://docs.python.org/2/library/turtle.html#turtle.heading
     print("Tess's final heading is " + str(tess.heading()))
+    time.sleep(2)
     tess.hideturtle()
+    del tess
 
 
 def exercise385():
@@ -68,20 +69,66 @@ def exercise386():
     for i in range(8):
         tess.forward(100)
         tess.left(45)
+    time.sleep(2)
+    tess.clear()
     tess.hideturtle()
+    del tess
+
+
+def exercise387():
+    turns = [160, -43, 270, -97, -43, 200, -940, 17, -86]
+    pirate = turtle.Turtle()
+    for turn in turns:
+        pirate.left(turn)
+        pirate.forward(100)
+    time.sleep(2)
+    pirate.clear()
+    pirate.hideturtle()
+    del pirate
+
+
+def exercise388():
+    turns = [160, -43, 270, -97, -43, 200, -940, 17, -86]
+    pirate = turtle.Turtle()
+    for turn in turns:
+        pirate.left(turn)
+        pirate.forward(100)
+        print("Pirate's heading is " + str(pirate.heading()))
+    time.sleep(2)
+    pirate.clear()
+    pirate.hideturtle()
+    del pirate
+
+def exercise3811():
+    # A litte about the geometry of pentagons (5-pointed stars)
+    # http://proofsfromthebook.com/2013/08/04/angle-sum-of-a-pentagram/
+    tess = turtle.Turtle()
+    # Since the exercise didn't specify which corner to start at,
+    # start at the top-left corner and draw the straight, left-to-right
+    # line first since turtle are pointed that way by default.
+    for i in range(5):
+        tess.forward(100)
+        tess.right(144)
+    time.sleep(2)
+    tess.clear()
+    tess.hideturtle()
+    del tess
+
 
 
 if __name__ == '__main__':
     # Create one turtle Screen for all exercises to use.
     window = turtle.Screen()
 
-    exercise381()
-    exercise382()
-    exercise383()
-    exercise384()
-    exercise385()
-    exercise386()
-    time.sleep(2)
+#    exercise381()
+#    exercise382()
+#    exercise383()
+#    exercise384()
+#    exercise385()
+#    exercise386()
+#    exercise387()
+#    exercise388()
+    exercise3811()
 
     window.bye()
 
